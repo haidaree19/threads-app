@@ -10,8 +10,8 @@ import RightSidebar from '@/components/shared/RightSidebar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-    title: 'Threads',
-    description: 'A Next.js 13 Meta Threads App'
+    title: 'Flowww',
+    description: 'A new social media app'
 }
 
 export default function RootLayout({
