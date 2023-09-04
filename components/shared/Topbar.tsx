@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <nav className="topbar">
             <Link href="/" className="flex items-center gap-2">
-                <Image src="/assets/at-symbol.svg" alt="logo" width={32} height={32} className="bg-amber-500 rounded-full p-1" />
+                <Image src="/assets/alternate_email_white.svg" alt="logo" width={32} height={32} className="bg-amber-500 rounded-full p-1" />
                 <Image src="/assets/flowww-logo-light.svg" alt="logo" width={90} height={20} />
                 {/* <p className="text-heading3-bold text-light-1 max-xs:hidden">Flowww</p> */}
             </Link>
