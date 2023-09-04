@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { profileTabs } from "@/constants";
 import ThreadsTab from "@/components/shared/ThreadsTab";
+import SearchBar from "@/components/shared/SearchBar";
 import { currentUser } from "@clerk/nextjs";
 import { fetchUser, fetchUsers } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
@@ -24,7 +25,8 @@ export default async function Page() {
     return (
         <section>
             <h1 className="head-text mb-10">Search</h1>
-            <div className="mt-14 flex flex-col gap-9">
+            <SearchBar routeType='search' />
+            <div className="mt-10 flex flex-col gap-5">
                 {result.users.length > 0 ? (
                     result.users.map((person) => (
                         <>
@@ -35,6 +37,7 @@ export default async function Page() {
                                 username={person.username}
                                 imgUrl={person.image}
                                 personType='User'
+                                isSearchPage={true}
                             />
                         </>
                     ))
