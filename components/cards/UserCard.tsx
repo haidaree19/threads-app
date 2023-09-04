@@ -9,7 +9,8 @@ interface Props {
     name: string,
     username: string,
     imgUrl: string,
-    personType: string
+    personType: string,
+    isSearchPage: boolean
 }
 
 export default function UserCard({
@@ -17,19 +18,20 @@ export default function UserCard({
     name,
     username,
     imgUrl,
-    personType
+    personType,
+    isSearchPage
 }: Props) {
     const router = useRouter();
 
     return (
-        <article className="user-card">
+        <article className={`${ isSearchPage && 'px-7 py-4 ' } user-card`}>
             <div className="user-card_avatar">
                 <Image 
                     src={imgUrl}
                     alt="logo"
                     width={48}
                     height={48}
-                    className="rounded-full"
+                    className="rounded-full object-cover h-12 w-12"
                 />
                 <div className="flex-1 text-ellipsis">
                     <h4 className="text-base-semibold text-light-1">{name}</h4>
