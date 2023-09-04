@@ -7,8 +7,6 @@ export default async function Home() {
     const user = await currentUser();
     if (!user) return null;
 
-    console.log('result:', result);
-
     return (
         <>
             <h1 className="text-light-1 text-heading1-bold">Home</h1>
@@ -16,21 +14,19 @@ export default async function Home() {
             <section className="mt-9 flex flex-col">
                 {result.posts && result.posts.length > 0 ? (
                     <>
-                        {result.posts.map((post) => {
-                            return (
-                                <ThreadCard
-                                    key={post._id}
-                                    id={post._id}
-                                    currentUserId={user.id}
-                                    parentId={post.parentId}
-                                    content={post.text}
-                                    author={post.author}
-                                    community={post.community}
-                                    createdAt={post.createdAt}
-                                    comments={post.children}
-                                />
-                            )
-                        })}
+                        {result.posts.map((post) => (
+                            <ThreadCard
+                                key={post._id}
+                                id={post._id}
+                                currentUserId={user.id}
+                                parentId={post.parentId}
+                                content={post.text}
+                                author={post.author}
+                                community={post.community}
+                                createdAt={post.createdAt}
+                                comments={post.children}
+                            />
+                        ))}
                     </>
                 ) : (
                     <p className="no-result">No threads found</p>
